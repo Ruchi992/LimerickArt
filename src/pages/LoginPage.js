@@ -1,16 +1,23 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Logo from "../Component/Logo";
-import Form from "../Component/Form";
-export default class Register extends React.Component {
+import CompanyLogoView from "../Component/CompanyLogoView";
+import LoginScreen from "../Component/LoginScreen";
+import StartScreen from "../Component/StartScreen";
+import AboutPage from "../Component/AboutPage";
+import UserSearch from "../Component/UserSearchScreen";
+
+export default class LoginPage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Logo />
-        <Form style={styles.Register} />
-        <View style={styles.RegisterTextCont}>
+        <CompanyLogoView />
+        <StartScreen />
+        <AboutPage />
+        <UserSearch />
+        <LoginScreen style={styles.Login} />
+        <View style={stayles.RegisterTextCont}>
           <Text> Can't loging need to register </Text>
-          <Text style={styles.RegisterButton}>sign in</Text>
+          <Text style={styles.RegisterButton}>Register Now</Text>
         </View>
       </View>
     );

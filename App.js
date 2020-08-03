@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
-import Login from "./src/pages/Login";
-import Register from "./src/pages/Register";
+import LoginPage from "./src/pages/LoginPage";
+import RegisterPage from "./src/pages/RegisterPage";
 import { createStackNavigation } from "react-navigation";
 
 export default class App extends React.Component {
@@ -11,7 +11,7 @@ export default class App extends React.Component {
         <StatusBar backgroundColor="#121212" barStyle="light-content" />
         <Text style={{ color: "#fff", fontSize: 18 }}></Text>
 
-        <Register />
+        <RegisterPage />
       </View>
     );
   }
