@@ -1,24 +1,28 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
+import Login from "./src/pages/Login";
+import Register from "./src/pages/Register";
+import { createStackNavigation } from "react-navigation";
 
-export default function App() {
-  console.log("App Executed");
-  let x;
-  x.toString();
-  return (
-    <View style={styles.container}>
-      <Text>Hello React Native</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <StatusBar backgroundColor="#121212" barStyle="light-content" />
+        <Text style={{ color: "#fff", fontSize: 18 }}></Text>
+
+        <Register />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#018786",
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
+    fontSize: 20,
     justifyContent: "center",
   },
 });
