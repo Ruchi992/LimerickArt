@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "LimerickArt",
-    "slug": "LimerickArt",
+    "name": "FYPLimerickArtProject",
+    "slug": "FYPLimerickArtProject",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

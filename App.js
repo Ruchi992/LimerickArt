@@ -1,21 +1,50 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { Component } from "react";
+import Feed from "./src/feed";
+import Detail from "./src/detail";
+import Screen1 from "./src/drawer/screen1";
+import Screen2 from "./src/drawer/screen2";
+import Tab1 from "./src/tabs/Tab1";
+import Tab2 from "./src/tabs/Tab2";
+import Tab3 from "./src/tabs/Tab3";
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+  DrawerActions,
+} from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import {
+  Appearance,
+  useColorScheme,
+  AppearanceProvider,
+} from "react-native-appearance";
+import { render } from "react-dom";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Hello React Native</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+const MaterialBottomTabs = createMaterialBottomTabNavigator();
+const MaterialTopTabs = createMaterialTopTabNavigator();
+
+export default class App extends Component {
+  render() {
+    createHomeStack = () => (
+      <Stack.Navigator>
+        <Stack.Screen name="Feed" component={Feed} />
+        <Stack.Screen name="Detail" component={Detail} />
+      </Stack.Navigator>
+    );
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Drawer.Screen name="Home" children={createHomeStack} />
+          <Drawer.Screen name="Contacts" component={Screen1} />
+          <Drawer.Screen name="Favraite" component={Screen2} />
+          <Drawer.Screen name="SettingUp" component={Screen3} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
